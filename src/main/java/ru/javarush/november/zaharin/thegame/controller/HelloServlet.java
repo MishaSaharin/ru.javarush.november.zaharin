@@ -1,9 +1,10 @@
-package ru.javarush.november.zaharin.thegame;
+package ru.javarush.november.zaharin.thegame.controller;
 
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
