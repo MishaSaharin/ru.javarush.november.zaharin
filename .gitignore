@@ -1,0 +1,12 @@
+target/
+/.idea/
+.idea/libraries/
+.idea/modules.xmlK
+.idea/jarRepositories.xml
+.idea/compiler.xml
+*.iws
+*.iml
+*.ipr
+/.mvn/
+/mvnw
+/mvnw.cmd
