@@ -1,4 +1,4 @@
-package ru.javarush.november.zaharin.thegame.entity;
+package ru.javarush.november.zaharin.entities;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

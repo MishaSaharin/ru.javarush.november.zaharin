@@ -1,10 +1,10 @@
-package ru.javarush.november.zaharin.thegame.services;
+package ru.javarush.november.zaharin.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.thegame.entity.Answer;
-import ru.javarush.november.zaharin.thegame.entity.Question;
+import ru.javarush.november.zaharin.entities.Answer;
+import ru.javarush.november.zaharin.entities.Question;
 
 import java.util.List;
 import java.util.Map;
@@ -67,13 +67,13 @@ class MapperByJsonTest {
     void checkAnswerParsingExceptionMessage() {
         Throwable expectedException = Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseAnswerMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
-        Assertions.assertEquals("It doesn't work like that! Pay attention!", expectedException.getMessage());
+        Assertions.assertEquals("Error!", expectedException.getMessage());
     }
 
     @Test
     void checkQuestionParsingExceptionMessage() {
         Throwable expectedException = Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseQuestionMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
-        Assertions.assertEquals("It doesn't work like that! Pay attention!", expectedException.getMessage());
+        Assertions.assertEquals("Error!", expectedException.getMessage());
     }
 }

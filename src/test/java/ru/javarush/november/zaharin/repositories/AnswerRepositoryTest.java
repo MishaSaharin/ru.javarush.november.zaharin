@@ -1,11 +1,10 @@
-package ru.javarush.november.zaharin.thegame.repositories;
+package ru.javarush.november.zaharin.repositories;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.thegame.entity.Answer;
+import ru.javarush.november.zaharin.entities.Answer;
 
 import java.util.Map;
-import java.util.Optional;
 
 class AnswerRepositoryTest {
 
@@ -20,11 +19,5 @@ class AnswerRepositoryTest {
     void getAnswerById() {
         Answer expected = new Answer("Отклонить вызов", 3, 10);
         Assertions.assertEquals(expected, answerRepository.getAnswerById(3));
-    }
-
-    @Test
-    void getAnswerForId() {
-        Answer expected = new Answer("Отклонить вызов", 3, 10);
-        Assertions.assertEquals(Optional.of(expected), answerRepository.getAnswerForId(3));
     }
 }

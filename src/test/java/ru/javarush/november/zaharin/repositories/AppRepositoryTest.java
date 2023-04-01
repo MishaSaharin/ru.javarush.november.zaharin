@@ -1,9 +1,9 @@
-package ru.javarush.november.zaharin.thegame.repositories;
+package ru.javarush.november.zaharin.repositories;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.thegame.entity.Answer;
-import ru.javarush.november.zaharin.thegame.entity.Question;
+import ru.javarush.november.zaharin.entities.Answer;
+import ru.javarush.november.zaharin.entities.Question;
 
 import java.io.IOException;
 import java.util.List;

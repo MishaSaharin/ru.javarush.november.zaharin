@@ -1,4 +1,4 @@
-package ru.javarush.november.zaharin.thegame.entity;
+package ru.javarush.november.zaharin.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -74,5 +74,15 @@ public class Question {
     @Override
     public int hashCode() {
         return Objects.hash(id, questionText, answersIdList, isLast);
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", questionText='" + questionText + '\'' +
+                ", answersIdList=" + answersIdList +
+                ", isLast=" + isLast +
+                '}';
     }
 }

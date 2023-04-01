@@ -1,7 +1,7 @@
-package ru.javarush.november.zaharin.thegame.repositories;
+package ru.javarush.november.zaharin.repositories;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.javarush.november.zaharin.thegame.services.MapperByJson;
+import ru.javarush.november.zaharin.services.MapperByJson;
 
 public class AppRepository {
 

@@ -1,10 +1,10 @@
-package ru.javarush.november.zaharin.thegame.controller;
+package ru.javarush.november.zaharin.controllers;
 
-import ru.javarush.november.zaharin.thegame.entity.Answer;
-import ru.javarush.november.zaharin.thegame.entity.Question;
-import ru.javarush.november.zaharin.thegame.repositories.AnswerRepository;
-import ru.javarush.november.zaharin.thegame.repositories.AppRepository;
-import ru.javarush.november.zaharin.thegame.repositories.QuestionRepository;
+import ru.javarush.november.zaharin.entities.Question;
+import ru.javarush.november.zaharin.entities.Answer;
+import ru.javarush.november.zaharin.repositories.AnswerRepository;
+import ru.javarush.november.zaharin.repositories.AppRepository;
+import ru.javarush.november.zaharin.repositories.QuestionRepository;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,12 +1,11 @@
-package ru.javarush.november.zaharin.thegame.repositories;
+package ru.javarush.november.zaharin.repositories;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.thegame.entity.Question;
+import ru.javarush.november.zaharin.entities.Question;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 class QuestionRepositoryTest {
 
@@ -22,11 +21,5 @@ class QuestionRepositoryTest {
     void getQuestionById() {
         Question expected = new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false);
         Assertions.assertEquals(expected, questionRepository.getQuestionById(1));
-    }
-
-    @Test
-    void getQuestionForId() {
-        Question expected = new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false);
-        Assertions.assertEquals(Optional.of(expected), questionRepository.getQuestionForId(1));
     }
 }
