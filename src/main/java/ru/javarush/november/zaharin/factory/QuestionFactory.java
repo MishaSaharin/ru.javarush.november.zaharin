@@ -1,13 +1,13 @@
-package ru.javarush.november.zaharin.repositories;
+package ru.javarush.november.zaharin.factory;
 
-import ru.javarush.november.zaharin.entities.Question;
+import ru.javarush.november.zaharin.entity.Question;
 
 import java.util.Map;
 
-public class QuestionRepository {
+public class QuestionFactory {
     private final Map<Integer, Question> idToQuestion;
 
-    public QuestionRepository(Map<Integer, Question> idToQuestion) {
+    public QuestionFactory(Map<Integer, Question> idToQuestion) {
         this.idToQuestion = idToQuestion;
     }
 
@@ -15,7 +15,7 @@ public class QuestionRepository {
         if (id != null && id > 0 && id < Integer.MAX_VALUE) {
             return idToQuestion.get(id);
         } else {
-            throw new NullPointerException("Error!");
+            throw new RuntimeException("Error!");
         }
     }
 }

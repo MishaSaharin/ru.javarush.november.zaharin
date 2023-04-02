@@ -1,9 +1,9 @@
-package ru.javarush.november.zaharin.services;
+package ru.javarush.november.zaharin.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.javarush.november.zaharin.entities.Answer;
-import ru.javarush.november.zaharin.entities.Question;
+import ru.javarush.november.zaharin.entity.Answer;
+import ru.javarush.november.zaharin.entity.Question;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ public class MapperByJson {
                     new TypeReference<Map<Integer, Question>>() {
                     }));
         } catch (IOException | IllegalArgumentException e) {
-            throw new IllegalStateException("Error!");
+            throw new RuntimeException("Error!");
         }
     }
 
@@ -28,7 +28,7 @@ public class MapperByJson {
                     new TypeReference<Map<Integer, Answer>>() {
                     }));
         } catch (IOException | IllegalArgumentException e) {
-            throw new IllegalStateException("Error!");
+            throw new RuntimeException( "Error!");
         }
     }
 }

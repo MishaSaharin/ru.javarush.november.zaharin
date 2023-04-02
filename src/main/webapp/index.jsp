@@ -26,7 +26,7 @@
     <p>наш бортмеханик - Черный Богдан, а фотографирует его Сергей</p>
     <p>Стальная Пятка - наш навигатор. А как обращаться к вам?</p>
 </div>
-<form method="post" action="appServlet" class="text-center" style="font-size:100%;">
+<form method="post" action="app" class="text-center" style="font-size:100%;">
     <label>Имя:
         <input type="hidden" name="nextQuestionId" value="1">
         <input type="text" name="name"><br/>

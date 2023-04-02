@@ -1,15 +1,15 @@
-package ru.javarush.november.zaharin.repositories;
+package ru.javarush.november.zaharin.factory;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.entities.Question;
+import ru.javarush.november.zaharin.entity.Question;
 
 import java.util.List;
 import java.util.Map;
 
-class QuestionRepositoryTest {
+class QuestionFactoryTest {
 
-    private QuestionRepository questionRepository = new QuestionRepository(Map.of(1, new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false),
+    private QuestionFactory questionFactory = new QuestionFactory(Map.of(1, new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false),
             4, new Question(4, "Ты принял вызов! Поднимаешься на мостик к капитану?", List.of(5, 6), false),
             9, new Question(9, "Ты поднялся на мостик. Кто ты?", List.of(8, 9), false),
             10, new Question(10, "Ты отклонил вызов! Поражение!", List.of(), true),
@@ -18,8 +18,8 @@ class QuestionRepositoryTest {
             13, new Question(13, "Ты рассказал правду о себе! Тебя вернули домой", List.of(), true)));
 
     @Test
-    void getQuestionById() {
+    void getQuestionByIdShouldReturnQuestion() {
         Question expected = new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false);
-        Assertions.assertEquals(expected, questionRepository.getQuestionById(1));
+        Assertions.assertEquals(expected, questionFactory.getQuestionById(1));
     }
 }

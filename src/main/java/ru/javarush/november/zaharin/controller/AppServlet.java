@@ -1,10 +1,10 @@
-package ru.javarush.november.zaharin.controllers;
+package ru.javarush.november.zaharin.controller;
 
-import ru.javarush.november.zaharin.entities.Question;
-import ru.javarush.november.zaharin.entities.Answer;
-import ru.javarush.november.zaharin.repositories.AnswerRepository;
-import ru.javarush.november.zaharin.repositories.AppRepository;
-import ru.javarush.november.zaharin.repositories.QuestionRepository;
+import ru.javarush.november.zaharin.entity.Question;
+import ru.javarush.november.zaharin.entity.Answer;
+import ru.javarush.november.zaharin.factory.AnswerFactory;
+import ru.javarush.november.zaharin.factory.AppFactory;
+import ru.javarush.november.zaharin.factory.QuestionFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,17 +18,17 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "appServlet", value = "/appServlet")
+@WebServlet(name = "appServlet", value = "/app")
 public class AppServlet extends HttpServlet {
-    QuestionRepository questionRepository;
-    AnswerRepository answerRepository;
-    AppRepository appRepository;
+    QuestionFactory questionFactory;
+    AnswerFactory answerFactory;
+    AppFactory appFactory;
 
     @Override
     public void init() {
-        appRepository = new AppRepository();
-        questionRepository = appRepository.getQuestionRepository("questionsList.json");
-        answerRepository = appRepository.getAnswerRepository("answersList.json");
+        appFactory = new AppFactory();
+        questionFactory = appFactory.getQuestionRepository("questionsList.json");
+        answerFactory = appFactory.getAnswerRepository("answersList.json");
 
         try {
             super.init();
@@ -50,14 +50,14 @@ public class AppServlet extends HttpServlet {
             }
         } else nextQuestionId = 1;
 
-        Question question = questionRepository.getQuestionById(nextQuestionId);
+        Question question = questionFactory.getQuestionById(nextQuestionId);
         Integer questionId = question.getId();
         String questionText = question.getQuestionText();
         boolean isLast = question.isLast();
         List<Integer> answersId = question.getAnswersIdList();
         List<Answer> answers = new ArrayList<>();
         for (Integer answerId : answersId) {
-            answers.add(answerRepository.getAnswerById(answerId));
+            answers.add(answerFactory.getAnswerById(answerId));
         }
 
         request.setAttribute("questionId", questionId);

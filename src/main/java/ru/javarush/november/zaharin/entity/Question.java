@@ -1,4 +1,4 @@
-package ru.javarush.november.zaharin.entities;
+package ru.javarush.november.zaharin.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;

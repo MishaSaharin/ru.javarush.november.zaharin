@@ -1,4 +1,4 @@
-package ru.javarush.november.zaharin.controllers;
+package ru.javarush.november.zaharin.controller;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

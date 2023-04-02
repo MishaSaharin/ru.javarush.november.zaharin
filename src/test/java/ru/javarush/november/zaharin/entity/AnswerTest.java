@@ -1,4 +1,4 @@
-package ru.javarush.november.zaharin.entities;
+package ru.javarush.november.zaharin.entity;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,47 +13,48 @@ class AnswerTest {
             4);
 
     @Test
-    void getAnswerText() {
+    //
+    void getAnswerTextShouldReturnString() {
         String answerText = answer.getAnswerText();
         Assertions.assertEquals("Принять вызов", answerText);
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"asd", "adssd", "12313 qwerjgwe", "zxzxczc", ".,m,.m bmnb iouoi %$%^&&^%%%", "OP[TYUOTYY TY[UOTYUTYU"})
-    void setAnswerText(String answerText) {
+    void setAnswerTextShouldReturnString(String answerText) {
         answer.setAnswerText(answerText);
         Assertions.assertEquals(answerText, answer.getAnswerText());
     }
 
     @Test
-    void getId() {
+    void getIdShouldReturnInteger() {
         Integer id = answer.getId();
         Assertions.assertEquals(2, id);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {Integer.MIN_VALUE, -123123123, -1, 0, 12735123, Integer.MAX_VALUE})
-    void setId(Integer id) {
+    void setIdShouldReturnInteger(Integer id) {
         answer.setId(id);
         Assertions.assertEquals(id, answer.getId());
     }
 
     @Test
-    void getNextQuestionId() {
+    void getNextQuestionIdShouldReturnInteger() {
         Integer id = answer.getNextQuestionId();
         Assertions.assertEquals(4, id);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {Integer.MIN_VALUE, -123123123, -1, 0, 12735123, Integer.MAX_VALUE})
-    void setNextQuestionId(Integer id) {
+    void setNextQuestionIdShouldReturnInteger(Integer id) {
         answer.setNextQuestionId(id);
         Assertions.assertEquals(id, answer.getNextQuestionId());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"asd", "adssd", "12313 qwerjgwe", "zxzxczc", ".,m,.m bmnb iouoi %$%^&&^%%%", "OP[TYUOTYY TY[UOTYUTYU"})
-    void testEquals(String test) {
+    void testEqualsShouldReturnString(String test) {
         Answer answerTest = new Answer("Принять вызов",
                 4,
                 2);

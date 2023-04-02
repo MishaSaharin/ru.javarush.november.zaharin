@@ -1,14 +1,14 @@
-package ru.javarush.november.zaharin.repositories;
+package ru.javarush.november.zaharin.factory;
 
-import ru.javarush.november.zaharin.entities.Answer;
+import ru.javarush.november.zaharin.entity.Answer;
 
 import java.util.Map;
 
-public class AnswerRepository {
+public class AnswerFactory {
 
     private final Map<Integer, Answer> idToAnswer;
 
-    public AnswerRepository(Map<Integer, Answer> idToAnswer) {
+    public AnswerFactory(Map<Integer, Answer> idToAnswer) {
         this.idToAnswer = idToAnswer;
     }
 
@@ -16,7 +16,7 @@ public class AnswerRepository {
         if (id != null && id > 0 && id < Integer.MAX_VALUE) {
             return idToAnswer.get(id);
         } else {
-            throw new NullPointerException("Error!");
+            throw new RuntimeException("Error!");
         }
     }
 }

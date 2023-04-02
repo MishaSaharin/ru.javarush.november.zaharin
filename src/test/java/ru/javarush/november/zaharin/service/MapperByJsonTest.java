@@ -1,10 +1,10 @@
-package ru.javarush.november.zaharin.services;
+package ru.javarush.november.zaharin.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.entities.Answer;
-import ru.javarush.november.zaharin.entities.Question;
+import ru.javarush.november.zaharin.entity.Answer;
+import ru.javarush.november.zaharin.entity.Question;
 
 import java.util.List;
 import java.util.Map;
@@ -52,26 +52,26 @@ class MapperByJsonTest {
     }
 
     @Test
-    void checkIfQuestionParsingThrowsException() {
+    void checkIfQuestionParsingShouldThrowsException() {
         Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseQuestionMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
     }
 
     @Test
-    void checkIfAnswerParsingThrowsException() {
+    void checkIfAnswerParsingShouldThrowsException() {
         Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseAnswerMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
     }
 
     @Test
-    void checkAnswerParsingExceptionMessage() {
+    void checkAnswerParsingShouldExceptionMessage() {
         Throwable expectedException = Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseAnswerMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
         Assertions.assertEquals("Error!", expectedException.getMessage());
     }
 
     @Test
-    void checkQuestionParsingExceptionMessage() {
+    void checkQuestionParsingShouldExceptionMessage() {
         Throwable expectedException = Assertions.assertThrows(RuntimeException.class,
                 () -> mapperByJson.parseQuestionMap(MapperByJson.class.getClassLoader().getResourceAsStream("TextForTest.txt"), mapper));
         Assertions.assertEquals("Error!", expectedException.getMessage());

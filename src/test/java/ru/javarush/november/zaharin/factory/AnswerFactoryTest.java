@@ -1,14 +1,14 @@
-package ru.javarush.november.zaharin.repositories;
+package ru.javarush.november.zaharin.factory;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.javarush.november.zaharin.entities.Answer;
+import ru.javarush.november.zaharin.entity.Answer;
 
 import java.util.Map;
 
-class AnswerRepositoryTest {
+class AnswerFactoryTest {
 
-    private AnswerRepository answerRepository = new AnswerRepository(Map.of(2, new Answer("Принять вызов", 2, 4),
+    private AnswerFactory answerFactory = new AnswerFactory(Map.of(2, new Answer("Принять вызов", 2, 4),
             3, new Answer("Отклонить вызов", 3, 10),
             5, new Answer("Подняться на мостик", 5, 9),
             6, new Answer("Отказаться подниматься на мостик", 6, 11),
@@ -16,8 +16,8 @@ class AnswerRepositoryTest {
             8, new Answer("Рассказать правду о себе", 8, 13)));
 
     @Test
-    void getAnswerById() {
+    void getAnswerByIdShouldReturnAnswer() {
         Answer expected = new Answer("Отклонить вызов", 3, 10);
-        Assertions.assertEquals(expected, answerRepository.getAnswerById(3));
+        Assertions.assertEquals(expected, answerFactory.getAnswerById(3));
     }
 }
