@@ -28,7 +28,7 @@ public class MapperByJson {
                     new TypeReference<Map<Integer, Answer>>() {
                     }));
         } catch (IOException | IllegalArgumentException e) {
-            throw new RuntimeException( "Error!");
+            throw new RuntimeException("Error!");
         }
     }
 }

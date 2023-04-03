@@ -30,7 +30,7 @@ class MapperByJsonTest {
 
     @Test
     void parsingAnswerMap() {
-        Map<Integer, Answer> expected = mapperByJson.parseAnswerMap(MapperByJson.class.getClassLoader().getResourceAsStream("answersList.json"), mapper);
+        Map<Integer, Answer> expected = mapperByJson.parseAnswerMap(MapperByJson.class.getClassLoader().getResourceAsStream("answers.json"), mapper);
         Assertions.assertAll(() -> Assertions.assertEquals(expected.get(2), answerRepositoryMap.get(2)),
                 () -> Assertions.assertEquals(expected.get(3), answerRepositoryMap.get(3)),
                 () -> Assertions.assertEquals(expected.get(5), answerRepositoryMap.get(5)),
@@ -41,7 +41,7 @@ class MapperByJsonTest {
 
     @Test
     void parsingQuestionMap() {
-        Map<Integer, Question> expected = mapperByJson.parseQuestionMap(MapperByJson.class.getClassLoader().getResourceAsStream("questionsList.json"), mapper);
+        Map<Integer, Question> expected = mapperByJson.parseQuestionMap(MapperByJson.class.getClassLoader().getResourceAsStream("questions.json"), mapper);
         Assertions.assertAll(() -> Assertions.assertEquals(expected.get(1), questionRepositoryMap.get(1)),
                 () -> Assertions.assertEquals(expected.get(4), questionRepositoryMap.get(4)),
                 () -> Assertions.assertEquals(expected.get(9), questionRepositoryMap.get(9)),

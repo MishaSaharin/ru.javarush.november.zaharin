@@ -3,6 +3,7 @@ package ru.javarush.november.zaharin.factory;
 import ru.javarush.november.zaharin.entity.Answer;
 
 import java.util.Map;
+import java.util.Optional;
 
 public class AnswerFactory {
 
@@ -13,10 +14,7 @@ public class AnswerFactory {
     }
 
     public Answer getAnswerById(Integer id) {
-        if (id != null && id > 0 && id < Integer.MAX_VALUE) {
-            return idToAnswer.get(id);
-        } else {
-            throw new RuntimeException("Error!");
-        }
+        Optional<Answer> answerOptional = Optional.ofNullable(idToAnswer.get(id));
+        return answerOptional.get();
     }
 }

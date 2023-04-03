@@ -29,7 +29,7 @@ class AppFactoryTest {
 
     @Test
     void getQuestionRepositoryShouldReturnQuestion(){
-        QuestionFactory expected = appFactory.getQuestionRepository("questionsList.json");
+        QuestionFactory expected = appFactory.getQuestion("questions.json");
         Assertions.assertAll(() -> Assertions.assertEquals(expected.getQuestionById(4), questionFactory.getQuestionById(4)),
                 () -> Assertions.assertEquals(expected.getQuestionById(9), questionFactory.getQuestionById(9)),
                 () -> Assertions.assertEquals(expected.getQuestionById(10), questionFactory.getQuestionById(10)),
@@ -40,7 +40,7 @@ class AppFactoryTest {
 
     @Test
     void getAnswerRepositoryShouldReturnAnswer(){
-        AnswerFactory expected = appFactory.getAnswerRepository("answersList.json");
+        AnswerFactory expected = appFactory.getAnswer("answers.json");
         Assertions.assertAll(() -> Assertions.assertEquals(expected.getAnswerById(2), answerFactory.getAnswerById(2)),
                 () -> Assertions.assertEquals(expected.getAnswerById(3), answerFactory.getAnswerById(3)),
                 () -> Assertions.assertEquals(expected.getAnswerById(5), answerFactory.getAnswerById(5)),

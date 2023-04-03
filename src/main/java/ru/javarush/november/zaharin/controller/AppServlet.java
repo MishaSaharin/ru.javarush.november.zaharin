@@ -1,7 +1,7 @@
 package ru.javarush.november.zaharin.controller;
 
-import ru.javarush.november.zaharin.entity.Question;
 import ru.javarush.november.zaharin.entity.Answer;
+import ru.javarush.november.zaharin.entity.Question;
 import ru.javarush.november.zaharin.factory.AnswerFactory;
 import ru.javarush.november.zaharin.factory.AppFactory;
 import ru.javarush.november.zaharin.factory.QuestionFactory;
@@ -27,8 +27,8 @@ public class AppServlet extends HttpServlet {
     @Override
     public void init() {
         appFactory = new AppFactory();
-        questionFactory = appFactory.getQuestionRepository("questionsList.json");
-        answerFactory = appFactory.getAnswerRepository("answersList.json");
+        questionFactory = appFactory.getQuestion("questions.json");
+        answerFactory = appFactory.getAnswer("answers.json");
 
         try {
             super.init();

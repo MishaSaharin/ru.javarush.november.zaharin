@@ -12,15 +12,16 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <junit.version>5.9.2</junit.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
-        <jsp-api.version>2.2</jsp-api.version>
-        <jstl.version>1.2</jstl.version>
         <jackson.core.version>2.14.0-rc2</jackson.core.version>
         <mockito-core.version>5.2.0</mockito-core.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <jsp-api.version>2.2</jsp-api.version>
         <jococo.version>0.8.8</jococo.version>
+        <junit.version>5.9.2</junit.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <dependencies>
@@ -99,6 +100,16 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.source}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
@@ -153,14 +164,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>9</source>
-                    <target>9</target>
-                </configuration>
             </plugin>
 
         </plugins>

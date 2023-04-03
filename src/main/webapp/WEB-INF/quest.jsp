@@ -39,7 +39,7 @@
 </div>
 
 <div>
-    <p>Player's Name: "${name}"</div>
+    <p>Player's Name:   "${name}"</div>
 </p>
 </div>
 

@@ -3,6 +3,7 @@ package ru.javarush.november.zaharin.factory;
 import ru.javarush.november.zaharin.entity.Question;
 
 import java.util.Map;
+import java.util.Optional;
 
 public class QuestionFactory {
     private final Map<Integer, Question> idToQuestion;
@@ -12,10 +13,7 @@ public class QuestionFactory {
     }
 
     public Question getQuestionById(Integer id) {
-        if (id != null && id > 0 && id < Integer.MAX_VALUE) {
-            return idToQuestion.get(id);
-        } else {
-            throw new RuntimeException("Error!");
-        }
+        Optional<Question> questionOptional = Optional.ofNullable(idToQuestion.get(id));
+        return questionOptional.get();
     }
 }
