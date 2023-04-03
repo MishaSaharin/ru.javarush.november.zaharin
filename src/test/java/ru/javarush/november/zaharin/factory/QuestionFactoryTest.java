@@ -20,6 +20,6 @@ class QuestionFactoryTest {
     @Test
     void getQuestionByIdShouldReturnQuestion() {
         Question expected = new Question(1, "Ты потерял память. Принять вызов НЛО?", List.of(2, 3), false);
-        Assertions.assertEquals(expected, questionFactory.getQuestionById(1));
+        Assertions.assertEquals(expected, questionFactory.findId(1));
     }
 }

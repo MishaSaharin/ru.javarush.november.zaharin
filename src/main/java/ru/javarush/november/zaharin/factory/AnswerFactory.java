@@ -5,7 +5,7 @@ import ru.javarush.november.zaharin.entity.Answer;
 import java.util.Map;
 import java.util.Optional;
 
-public class AnswerFactory {
+public class AnswerFactory implements FinderId<Answer> {
 
     private final Map<Integer, Answer> idToAnswer;
 
@@ -13,8 +13,9 @@ public class AnswerFactory {
         this.idToAnswer = idToAnswer;
     }
 
-    public Answer getAnswerById(Integer id) {
-        Optional<Answer> answerOptional = Optional.ofNullable(idToAnswer.get(id));
+    @Override
+    public Answer findId(Integer id) {
+        Optional<Answer> answerOptional = Optional.of(idToAnswer.get(id));
         return answerOptional.get();
     }
 }

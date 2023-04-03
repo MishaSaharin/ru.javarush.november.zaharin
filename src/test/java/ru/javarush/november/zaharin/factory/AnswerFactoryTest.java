@@ -18,6 +18,6 @@ class AnswerFactoryTest {
     @Test
     void getAnswerByIdShouldReturnAnswer() {
         Answer expected = new Answer("Отклонить вызов", 3, 10);
-        Assertions.assertEquals(expected, answerFactory.getAnswerById(3));
+        Assertions.assertEquals(expected, answerFactory.findId(3));
     }
 }

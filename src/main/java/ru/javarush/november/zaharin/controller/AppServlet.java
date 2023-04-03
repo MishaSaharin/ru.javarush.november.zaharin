@@ -50,14 +50,14 @@ public class AppServlet extends HttpServlet {
             }
         } else nextQuestionId = 1;
 
-        Question question = questionFactory.getQuestionById(nextQuestionId);
+        Question question = questionFactory.findId(nextQuestionId);
         Integer questionId = question.getId();
         String questionText = question.getQuestionText();
         boolean isLast = question.isLast();
         List<Integer> answersId = question.getAnswersIdList();
         List<Answer> answers = new ArrayList<>();
         for (Integer answerId : answersId) {
-            answers.add(answerFactory.getAnswerById(answerId));
+            answers.add(answerFactory.findId(answerId));
         }
 
         request.setAttribute("questionId", questionId);

@@ -30,22 +30,22 @@ class AppFactoryTest {
     @Test
     void getQuestionRepositoryShouldReturnQuestion(){
         QuestionFactory expected = appFactory.getQuestion("questions.json");
-        Assertions.assertAll(() -> Assertions.assertEquals(expected.getQuestionById(4), questionFactory.getQuestionById(4)),
-                () -> Assertions.assertEquals(expected.getQuestionById(9), questionFactory.getQuestionById(9)),
-                () -> Assertions.assertEquals(expected.getQuestionById(10), questionFactory.getQuestionById(10)),
-                () -> Assertions.assertEquals(expected.getQuestionById(11), questionFactory.getQuestionById(11)),
-                () -> Assertions.assertEquals(expected.getQuestionById(12), questionFactory.getQuestionById(12)),
-                () -> Assertions.assertEquals(expected.getQuestionById(13), questionFactory.getQuestionById(13)));
+        Assertions.assertAll(() -> Assertions.assertEquals(expected.findId(4), questionFactory.findId(4)),
+                () -> Assertions.assertEquals(expected.findId(9), questionFactory.findId(9)),
+                () -> Assertions.assertEquals(expected.findId(10), questionFactory.findId(10)),
+                () -> Assertions.assertEquals(expected.findId(11), questionFactory.findId(11)),
+                () -> Assertions.assertEquals(expected.findId(12), questionFactory.findId(12)),
+                () -> Assertions.assertEquals(expected.findId(13), questionFactory.findId(13)));
     }
 
     @Test
     void getAnswerRepositoryShouldReturnAnswer(){
         AnswerFactory expected = appFactory.getAnswer("answers.json");
-        Assertions.assertAll(() -> Assertions.assertEquals(expected.getAnswerById(2), answerFactory.getAnswerById(2)),
-                () -> Assertions.assertEquals(expected.getAnswerById(3), answerFactory.getAnswerById(3)),
-                () -> Assertions.assertEquals(expected.getAnswerById(5), answerFactory.getAnswerById(5)),
-                () -> Assertions.assertEquals(expected.getAnswerById(6), answerFactory.getAnswerById(6)),
-                () -> Assertions.assertEquals(expected.getAnswerById(8), answerFactory.getAnswerById(8)),
-                () -> Assertions.assertEquals(expected.getAnswerById(9), answerFactory.getAnswerById(9)));
+        Assertions.assertAll(() -> Assertions.assertEquals(expected.findId(2), answerFactory.findId(2)),
+                () -> Assertions.assertEquals(expected.findId(3), answerFactory.findId(3)),
+                () -> Assertions.assertEquals(expected.findId(5), answerFactory.findId(5)),
+                () -> Assertions.assertEquals(expected.findId(6), answerFactory.findId(6)),
+                () -> Assertions.assertEquals(expected.findId(8), answerFactory.findId(8)),
+                () -> Assertions.assertEquals(expected.findId(9), answerFactory.findId(9)));
     }
 }
