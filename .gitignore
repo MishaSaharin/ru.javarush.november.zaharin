@@ -1,9 +1,5 @@
 target/
-/.idea/
-.idea/libraries/
-.idea/modules.xmlK
-.idea/jarRepositories.xml
-.idea/compiler.xml
+.idea/
 *.iws
 *.iml
 *.ipr
